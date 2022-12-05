@@ -9,29 +9,11 @@ namespace Advent_of_Code_22.Problems
 {
     public class Problem05 : IProblem<string, string>
     {
-        public string DoPartA()
-        {
-            var crates = ReadStock();
-            var commands = ReadCommands();
+        public string DoPartA() =>
+            OrganizeCrates(moveTogether: false);
 
-            crates = RunCommands(crates, commands, false);
-
-            var cratesOnTop = crates.OrderBy(crate => crate.Key).Select(crate => crate.Value.FirstOrDefault().ToString());
-
-            return string.Join(string.Empty, cratesOnTop);
-        }
-
-        public string DoPartB()
-        {
-            var crates = ReadStock();
-            var commands = ReadCommands();
-
-            crates = RunCommands(crates, commands, true);
-
-            var cratesOnTop = crates.OrderBy(crate => crate.Key).Select(crate => crate.Value.FirstOrDefault().ToString());
-
-            return string.Join(string.Empty, cratesOnTop);
-        }
+        public string DoPartB() =>
+            OrganizeCrates(moveTogether: true);
 
         private Dictionary<int, Stack<char>> ReadStock()
         {
@@ -109,6 +91,18 @@ namespace Advent_of_Code_22.Problems
         {
             for (int i = 0; i < pieces; i++)
                 to.Push(from.Pop());
+        }
+
+        private string OrganizeCrates(bool moveTogether)
+        {
+            var crates = ReadStock();
+            var commands = ReadCommands();
+
+            crates = RunCommands(crates, commands, moveTogether);
+
+            var cratesOnTop = crates.OrderBy(crate => crate.Key).Select(crate => crate.Value.FirstOrDefault().ToString());
+
+            return string.Join(string.Empty, cratesOnTop);
         }
     }
 }
