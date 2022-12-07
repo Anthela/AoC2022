@@ -25,6 +25,9 @@
     <None Update="Inputs\03_mini.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Inputs\06.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Inputs\05.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -35,6 +38,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Inputs\05_crates_mini.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Inputs\06_mini.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Inputs\05_mini.txt">
